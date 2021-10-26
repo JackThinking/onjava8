@@ -17,7 +17,7 @@ public class InstrumentedHashSet<E> extends HashSet<E> {
   @Override
   public boolean add(E e) {
     addCount++;
-    return super.add(e);x
+    return super.add(e);
   }
 
   @Override
