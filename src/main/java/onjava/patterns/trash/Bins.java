@@ -14,6 +14,7 @@ public class Bins {
   final List<Glass> glass = new ArrayList<>();
   final List<Cardboard> cardboard = new ArrayList<>();
 
+  // 不优雅的实现
   public Bins(List<Trash> source) {
     bin = new ArrayList<>(source); // Copy
     bin.forEach(
