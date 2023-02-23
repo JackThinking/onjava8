@@ -1,17 +1,19 @@
 package onjava.arrays;
 
+import java.util.Arrays;
 import onjava.Count;
 import onjava.Rand;
 
-import java.util.Arrays;
-
 public class ComparingArrays {
+
   public static final int SZ = 15;
 
   static String[][] twoDArray() {
     String[][] md = new String[5][];
     Arrays.setAll(md, String[]::new);
-    for (String[] strings : md) Arrays.setAll(strings, new Rand.String()::get);
+    for (String[] strings : md) {
+      Arrays.setAll(strings, new Rand.String()::get);
+    }
     return md;
   }
 

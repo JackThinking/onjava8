@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ParseTrash {
+
   public static String source = "Trash.dat";
 
   public static <T extends Trash> void fillBin(String packageName, Fillable<T> bin) {
@@ -33,10 +34,12 @@ public class ParseTrash {
       throw new RuntimeException(e);
     }
   }
+
   // Special case to handle a List:
   public static <T extends Trash> void fillBin(String packageName, List<T> bin) {
     fillBin(packageName, new FillableList<>(bin));
   }
+
   // Basic test:
   public static void main(String[] args) {
     List<Trash> bin = new ArrayList<>();

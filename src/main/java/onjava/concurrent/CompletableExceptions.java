@@ -1,8 +1,9 @@
 package onjava.concurrent;
 
-import java.util.concurrent.*;
+import java.util.concurrent.CompletableFuture;
 
 public class CompletableExceptions {
+
   static CompletableFuture<Breakable> test(String id, int failcount) {
     return CompletableFuture.completedFuture(new Breakable(id, failcount))
         .thenApply(Breakable::work)

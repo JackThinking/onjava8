@@ -1,8 +1,9 @@
 package onjava.functional;
 
-import java.util.function.*;
+import java.util.function.Function;
 
 class I {
+
   @Override
   public String toString() {
     return "I";
@@ -10,6 +11,7 @@ class I {
 }
 
 class O {
+
   @Override
   public String toString() {
     return "O";
@@ -17,6 +19,7 @@ class O {
 }
 
 public class TransformFunction {
+
   static Function<I, O> transform(Function<I, O> in) {
     return in.andThen(
         o -> {

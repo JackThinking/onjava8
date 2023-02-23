@@ -1,8 +1,10 @@
 package onjava.arrays;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.SplittableRandom;
 
 public class RaggedArray {
+
   static int val = 1;
 
   public static void main(String[] args) {

@@ -1,11 +1,12 @@
 package onjava.arrays;
 
+import static onjava.ArrayShow.show;
+
 import java.util.Arrays;
 import java.util.Collections;
 
-import static onjava.ArrayShow.show;
-
 public class Reverse {
+
   public static void main(String[] args) {
     CompType[] a = new CompType[12];
     Arrays.setAll(a, n -> CompType.get());

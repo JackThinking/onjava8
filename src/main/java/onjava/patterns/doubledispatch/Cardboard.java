@@ -8,6 +8,7 @@ package onjava.patterns.doubledispatch;
 import java.util.List;
 
 public class Cardboard extends onjava.patterns.trash.Cardboard implements TypedBinMember {
+
   public Cardboard(double wt) {
     super(wt);
   }

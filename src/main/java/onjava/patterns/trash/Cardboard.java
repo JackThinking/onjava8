@@ -5,6 +5,7 @@
 package onjava.patterns.trash;
 
 public class Cardboard extends Trash {
+
   public Cardboard(double wt) {
     super(wt);
   }
@@ -13,6 +14,7 @@ public class Cardboard extends Trash {
   public double price() {
     return Price.CARDBOARD;
   }
+
   // Ignore for now; to be used later:
   @Override
   public void accept(Visitor v) {

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Bins {
+
   final List<Trash> bin;
   final List<Aluminum> aluminum = new ArrayList<>();
   final List<Paper> paper = new ArrayList<>();
@@ -20,10 +21,18 @@ public class Bins {
     bin.forEach(
         t -> {
           // Use reflection to discover Trash type:
-          if (t instanceof Aluminum) aluminum.add((Aluminum) t);
-          if (t instanceof Paper) paper.add((Paper) t);
-          if (t instanceof Glass) glass.add((Glass) t);
-          if (t instanceof Cardboard) cardboard.add((Cardboard) t);
+          if (t instanceof Aluminum) {
+            aluminum.add((Aluminum) t);
+          }
+          if (t instanceof Paper) {
+            paper.add((Paper) t);
+          }
+          if (t instanceof Glass) {
+            glass.add((Glass) t);
+          }
+          if (t instanceof Cardboard) {
+            cardboard.add((Cardboard) t);
+          }
         });
   }
 

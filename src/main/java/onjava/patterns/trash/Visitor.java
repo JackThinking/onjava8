@@ -7,6 +7,7 @@ package onjava.patterns.trash;
 
 // 访问者模式实现的双路分发是胶着在一起的
 public abstract class Visitor {
+
   protected double alTotal; // Aluminum
   protected double pTotal; // Paper
   protected double gTotal; // Glass

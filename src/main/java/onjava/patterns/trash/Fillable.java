@@ -6,5 +6,6 @@
 package onjava.patterns.trash;
 
 public interface Fillable<T extends Trash> {
+
   void addTrash(T t);
 }

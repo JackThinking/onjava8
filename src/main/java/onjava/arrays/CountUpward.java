@@ -3,6 +3,7 @@ package onjava.arrays;
 import java.util.stream.LongStream;
 
 public class CountUpward {
+
   static long[] fillCounted(int size) {
     return LongStream.iterate(0, i -> i + 1).limit(size).toArray();
   }

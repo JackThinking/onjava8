@@ -3,6 +3,7 @@ package onjava.concurrent;
 import java.util.stream.Stream;
 
 public class StreamExceptions {
+
   static Stream<Breakable> test(String id, int failcount) {
     return Stream.of(new Breakable(id, failcount))
         .map(Breakable::work)

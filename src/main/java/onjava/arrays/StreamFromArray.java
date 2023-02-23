@@ -1,11 +1,11 @@
 package onjava.arrays;
 
+import java.util.Arrays;
 import onjava.ConvertTo;
 import onjava.Rand;
 
-import java.util.Arrays;
-
 public class StreamFromArray {
+
   public static void main(String[] args) {
     String[] s = new Rand.String().array(10);
     Arrays.stream(s).skip(3).limit(5).map(ss -> ss + "!").forEach(System.out::println);

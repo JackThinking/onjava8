@@ -1,11 +1,19 @@
 package onjava;
 
-import java.util.*;
-import java.util.function.*;
-import static onjava.ConvertTo.*;
+import static onjava.ConvertTo.primitive;
+
+import java.util.Arrays;
+import java.util.function.DoubleSupplier;
+import java.util.function.IntSupplier;
+import java.util.function.LongSupplier;
+import java.util.function.Supplier;
 
 public interface Count {
+
+  char[] CHARS = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+
   class Boolean implements Supplier<java.lang.Boolean> {
+
     private boolean b = true;
 
     @Override
@@ -26,6 +34,7 @@ public interface Count {
   }
 
   class Pboolean {
+
     private boolean b = true;
 
     public boolean get() {
@@ -43,6 +52,7 @@ public interface Count {
   }
 
   class Byte implements Supplier<java.lang.Byte> {
+
     private byte b;
 
     @Override
@@ -62,6 +72,7 @@ public interface Count {
   }
 
   class Pbyte {
+
     private byte b;
 
     public byte get() {
@@ -77,9 +88,8 @@ public interface Count {
     }
   }
 
-  char[] CHARS = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-
   class Character implements Supplier<java.lang.Character> {
+
     private int i;
 
     @Override
@@ -100,6 +110,7 @@ public interface Count {
   }
 
   class Pchar {
+
     private int i;
 
     public char get() {
@@ -117,6 +128,7 @@ public interface Count {
   }
 
   class Short implements Supplier<java.lang.Short> {
+
     short s;
 
     @Override
@@ -136,6 +148,7 @@ public interface Count {
   }
 
   class Pshort {
+
     short s;
 
     public short get() {
@@ -152,6 +165,7 @@ public interface Count {
   }
 
   class Integer implements Supplier<java.lang.Integer> {
+
     int i;
 
     @Override
@@ -171,6 +185,7 @@ public interface Count {
   }
 
   class Pint implements IntSupplier {
+
     int i;
 
     public int get() {
@@ -192,6 +207,7 @@ public interface Count {
   }
 
   class Long implements Supplier<java.lang.Long> {
+
     private long l;
 
     @Override
@@ -211,6 +227,7 @@ public interface Count {
   }
 
   class Plong implements LongSupplier {
+
     private long l;
 
     public long get() {
@@ -232,6 +249,7 @@ public interface Count {
   }
 
   class Float implements Supplier<java.lang.Float> {
+
     private int i;
 
     @Override
@@ -251,6 +269,7 @@ public interface Count {
   }
 
   class Pfloat {
+
     private int i;
 
     public float get() {
@@ -267,6 +286,7 @@ public interface Count {
   }
 
   class Double implements Supplier<java.lang.Double> {
+
     private int i;
 
     @Override
@@ -286,6 +306,7 @@ public interface Count {
   }
 
   class Pdouble implements DoubleSupplier {
+
     private int i;
 
     public double get() {

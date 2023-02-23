@@ -1,8 +1,11 @@
 package onjava.arrays;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ArrayOfGenerics {
+
   @SuppressWarnings("unchecked")
   public static void main(String[] args) {
     List<String>[] ls;

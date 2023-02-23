@@ -1,13 +1,13 @@
 package onjava.arrays;
 
-import onjava.Rand;
+import static onjava.ArrayShow.show;
 
 import java.util.Arrays;
 import java.util.Collections;
-
-import static onjava.ArrayShow.show;
+import onjava.Rand;
 
 public class StringSorting {
+
   public static void main(String[] args) {
     String[] sa = new Rand.String().array(20);
     show("Before sort", sa);

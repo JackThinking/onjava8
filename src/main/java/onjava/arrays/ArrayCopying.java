@@ -1,12 +1,12 @@
 package onjava.arrays;
 
-import onjava.Count;
-
-import java.util.Arrays;
-
 import static onjava.ArrayShow.show;
 
+import java.util.Arrays;
+import onjava.Count;
+
 class Sup { // Superclass
+
   private int id;
 
   Sup(int n) {
@@ -20,12 +20,14 @@ class Sup { // Superclass
 }
 
 class Sub extends Sup { // Subclass
+
   Sub(int n) {
     super(n);
   }
 }
 
 public class ArrayCopying {
+
   public static final int SZ = 15;
 
   public static void main(String[] args) {

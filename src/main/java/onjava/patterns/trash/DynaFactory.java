@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DynaFactory {
+
   private Map<String, Constructor> constructors = new HashMap<>();
   private String packageName;
 

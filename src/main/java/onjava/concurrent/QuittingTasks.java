@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class QuittingTasks {
+
   public static final int COUNT = 150;
 
   public static void main(String[] args) {

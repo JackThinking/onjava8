@@ -5,23 +5,30 @@ package onjava.generics;
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Bounds in Java generics
-import java.util.*;
 
-interface SuperPower {}
+import java.util.List;
+
+interface SuperPower {
+
+}
 
 interface XRayVision extends SuperPower {
+
   void seeThroughWalls();
 }
 
 interface SuperHearing extends SuperPower {
+
   void hearSubtleNoises();
 }
 
 interface SuperSmell extends SuperPower {
+
   void trackBySmell();
 }
 
 class SuperHero<POWER extends SuperPower> {
+
   POWER power;
 
   SuperHero(POWER power) {
@@ -34,6 +41,7 @@ class SuperHero<POWER extends SuperPower> {
 }
 
 class SuperSleuth<POWER extends XRayVision> extends SuperHero<POWER> {
+
   SuperSleuth(POWER power) {
     super(power);
   }
@@ -44,6 +52,7 @@ class SuperSleuth<POWER extends XRayVision> extends SuperHero<POWER> {
 }
 
 class CanineHero<POWER extends SuperHearing & SuperSmell> extends SuperHero<POWER> {
+
   CanineHero(POWER power) {
     super(power);
   }
@@ -58,20 +67,25 @@ class CanineHero<POWER extends SuperHearing & SuperSmell> extends SuperHero<POWE
 }
 
 class SuperHearSmell implements SuperHearing, SuperSmell {
-  @Override
-  public void hearSubtleNoises() {}
 
   @Override
-  public void trackBySmell() {}
+  public void hearSubtleNoises() {
+  }
+
+  @Override
+  public void trackBySmell() {
+  }
 }
 
 class DogPerson extends CanineHero<SuperHearSmell> {
+
   DogPerson() {
     super(new SuperHearSmell());
   }
 }
 
 public class EpicBattle {
+
   // Bounds in generic methods:
   static <POWER extends SuperHearing> void useSuperHearing(SuperHero<POWER> hero) {
     hero.getPower().hearSubtleNoises();

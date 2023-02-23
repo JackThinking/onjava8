@@ -1,9 +1,11 @@
 package onjava.arrays;
 
-import java.util.*;
-import static onjava.ArrayShow.*;
+import static onjava.ArrayShow.show;
+
+import java.util.Arrays;
 
 class Bob {
+
   final int id;
 
   Bob(int n) {
@@ -17,6 +19,7 @@ class Bob {
 }
 
 public class SimpleSetAll {
+
   public static final int SZ = 8;
   static int val = 1;
   static char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();

@@ -3,13 +3,13 @@ package onjava.concurrent;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class QuittableTask implements Runnable {
+
   final int id;
+  private AtomicBoolean running = new AtomicBoolean(true);
 
   public QuittableTask(int id) {
     this.id = id;
   }
-
-  private AtomicBoolean running = new AtomicBoolean(true);
 
   public void quit() {
     running.set(false);
@@ -18,7 +18,9 @@ public class QuittableTask implements Runnable {
   @Override
   public void run() {
     while (running.get()) // [1]
-    new Nap(0.1);
+    {
+      new Nap(0.1);
+    }
     System.out.print(id + " "); // [2]
   }
 }

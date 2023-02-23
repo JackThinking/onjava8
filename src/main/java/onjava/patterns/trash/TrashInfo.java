@@ -6,6 +6,7 @@
 package onjava.patterns.trash;
 
 public class TrashInfo {
+
   public final String type;
   public final double data;
 

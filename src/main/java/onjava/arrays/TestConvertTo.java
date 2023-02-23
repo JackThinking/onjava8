@@ -1,14 +1,14 @@
 package onjava.arrays;
 
-import onjava.Rand;
-
-import java.util.Arrays;
-
 import static onjava.ArrayShow.show;
 import static onjava.ConvertTo.boxed;
 import static onjava.ConvertTo.primitive;
 
+import java.util.Arrays;
+import onjava.Rand;
+
 public class TestConvertTo {
+
   static final int SIZE = 6;
 
   public static void main(String[] args) {

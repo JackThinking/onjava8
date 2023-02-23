@@ -2,11 +2,16 @@ package onjava.functional;
 
 import java.util.function.Function;
 
-class One {}
+class One {
 
-class Two {}
+}
+
+class Two {
+
+}
 
 public class ConsumeFunction {
+
   static Two consume(Function<One, Two> onetwo) {
     return onetwo.apply(new One());
   }

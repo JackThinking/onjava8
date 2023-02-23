@@ -4,9 +4,11 @@ package onjava.generics;
 // (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
+
 import java.util.function.Supplier;
 
 class ClassAsFactory<T> implements Supplier<T> {
+
   Class<T> kind;
 
   ClassAsFactory(Class<T> kind) {
@@ -24,7 +26,9 @@ class ClassAsFactory<T> implements Supplier<T> {
 }
 
 class Employee {
-  public Employee() {}
+
+  public Employee() {
+  }
 
   @Override
   public String toString() {
@@ -33,6 +37,7 @@ class Employee {
 }
 
 public class InstantiateGenericType {
+
   public static void main(String[] args) {
     ClassAsFactory<Employee> fe = new ClassAsFactory<>(Employee.class);
     System.out.println(fe.get());

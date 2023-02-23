@@ -1,10 +1,14 @@
 package onjava.arrays;
 
-import java.util.*;
-import onjava.*;
-import static onjava.ArrayShow.*;
+import static onjava.ArrayShow.show;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import onjava.Suppliers;
 
 class BerylliumSphere {
+
   private static long counter;
   private final long id = counter++;
 
@@ -15,9 +19,12 @@ class BerylliumSphere {
 }
 
 public class CollectionComparison {
+
   public static void main(String[] args) {
     BerylliumSphere[] spheres = new BerylliumSphere[10];
-    for (int i = 0; i < 5; i++) spheres[i] = new BerylliumSphere();
+    for (int i = 0; i < 5; i++) {
+      spheres[i] = new BerylliumSphere();
+    }
     show(spheres);
     System.out.println(spheres[4]);
     List<BerylliumSphere> sphereList = Suppliers.create(ArrayList::new, BerylliumSphere::new, 5);

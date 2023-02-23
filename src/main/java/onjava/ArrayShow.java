@@ -1,8 +1,9 @@
 package onjava;
 
-import java.util.*;
+import java.util.Arrays;
 
 public interface ArrayShow {
+
   static void show(Object[] a) {
     System.out.println(Arrays.toString(a));
   }
@@ -38,6 +39,7 @@ public interface ArrayShow {
   static void show(double[] a) {
     System.out.println(Arrays.toString(a));
   }
+
   // Start with a description:
   static void show(String info, Object[] a) {
     System.out.print(info + ": ");

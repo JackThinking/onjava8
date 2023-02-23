@@ -1,6 +1,22 @@
 package onjava.functional;
 
+interface MakeNoArgs {
+
+  Dog make();
+}
+
+interface Make1Arg {
+
+  Dog make(String nm);
+}
+
+interface Make2Args {
+
+  Dog make(String nm, int age);
+}
+
 class Dog {
+
   String name;
   int age = -1; // For "unknown"
 
@@ -18,19 +34,8 @@ class Dog {
   }
 }
 
-interface MakeNoArgs {
-  Dog make();
-}
-
-interface Make1Arg {
-  Dog make(String nm);
-}
-
-interface Make2Args {
-  Dog make(String nm, int age);
-}
-
 public class CtorReference {
+
   public static void main(String[] args) {
     MakeNoArgs mna = Dog::new; // [1]
     Make1Arg m1a = Dog::new; // [2]

@@ -4,7 +4,6 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
 
 public class Baked {
-  static class Pan {}
 
   static Pan pan(Batter b) {
     new Nap(0.1);
@@ -23,5 +22,9 @@ public class Baked {
   public static Stream<CompletableFuture<Baked>> batch() {
     CompletableFuture<Batter> batter = Batter.mix();
     return Stream.of(bake(batter), bake(batter), bake(batter), bake(batter));
+  }
+
+  static class Pan {
+
   }
 }

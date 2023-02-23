@@ -5,14 +5,14 @@
 // {java patterns.recycleb.RecycleB}
 package onjava.patterns.recycleb;
 
+import java.util.ArrayList;
+import java.util.List;
 import onjava.patterns.trash.Bins;
 import onjava.patterns.trash.ParseTrash;
 import onjava.patterns.trash.Trash;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class RecycleB {
+
   public static void main(String[] args) {
     List<Trash> bin = new ArrayList<>();
     ParseTrash.fillBin("trash", bin);

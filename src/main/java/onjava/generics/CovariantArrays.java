@@ -5,15 +5,24 @@ package onjava.generics;
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 
-class Fruit {}
+class Fruit {
 
-class Apple extends Fruit {}
+}
 
-class Jonathan extends Apple {}
+class Apple extends Fruit {
 
-class Orange extends Fruit {}
+}
+
+class Jonathan extends Apple {
+
+}
+
+class Orange extends Fruit {
+
+}
 
 public class CovariantArrays {
+
   public static void main(String[] args) {
     Fruit[] fruit = new Apple[10];
     fruit[0] = new Apple(); // OK

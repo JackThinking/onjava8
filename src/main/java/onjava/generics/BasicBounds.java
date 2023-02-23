@@ -6,10 +6,17 @@ package onjava.generics;
 // Visit http://OnJava8.com for more book information.
 
 interface HasColor {
+
   java.awt.Color getColor();
 }
 
+interface Weight {
+
+  int weight();
+}
+
 class WithColor<T extends HasColor> {
+
   T item;
 
   WithColor(T item) {
@@ -19,21 +26,24 @@ class WithColor<T extends HasColor> {
   T getItem() {
     return item;
   }
+
   // The bound allows you to call a method:
   java.awt.Color color() {
     return item.getColor();
   }
 }
 
-class Coord {
-  public int x, y, z;
-}
-
 // This fails. Class must be first, then interfaces:
 // class WithColorCoord<T extends HasColor & Coord> {
 
+class Coord {
+
+  public int x, y, z;
+}
+
 // Multiple bounds:
 class WithColorCoord<T extends Coord & HasColor> {
+
   T item;
 
   WithColorCoord(T item) {
@@ -61,13 +71,10 @@ class WithColorCoord<T extends Coord & HasColor> {
   }
 }
 
-interface Weight {
-  int weight();
-}
-
 // As with inheritance, you can have only one
 // concrete class but multiple interfaces:
 class Solid<T extends Coord & HasColor & Weight> {
+
   T item;
 
   Solid(T item) {
@@ -100,6 +107,7 @@ class Solid<T extends Coord & HasColor & Weight> {
 }
 
 class Bounded extends Coord implements HasColor, Weight {
+
   @Override
   public java.awt.Color getColor() {
     return null;
@@ -112,6 +120,7 @@ class Bounded extends Coord implements HasColor, Weight {
 }
 
 public class BasicBounds {
+
   public static void main(String[] args) {
     Solid<Bounded> solid = new Solid<>(new Bounded());
     solid.color();

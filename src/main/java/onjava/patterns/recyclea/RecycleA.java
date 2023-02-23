@@ -6,16 +6,20 @@
 // {java patterns.recyclea.RecycleA}
 package onjava.patterns.recyclea;
 
-import onjava.patterns.trash.*;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.SplittableRandom;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import onjava.patterns.trash.Aluminum;
+import onjava.patterns.trash.Bins;
+import onjava.patterns.trash.Glass;
+import onjava.patterns.trash.Paper;
+import onjava.patterns.trash.Trash;
 
 class SimpleFactory {
+
   static final List<Function<Double, Trash>> constructors =
       Arrays.asList(Aluminum::new, Paper::new, Glass::new);
   static final int SIZE = constructors.size();
@@ -27,6 +31,7 @@ class SimpleFactory {
 }
 
 public class RecycleA {
+
   public static void main(String[] args) {
     List<Trash> bin = Stream.generate(SimpleFactory::random).limit(10).collect(Collectors.toList());
     Bins bins = new Bins(bin);

@@ -12,6 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 
 class PriceVisitor extends Visitor {
+
   public PriceVisitor() {
     super("price");
   }
@@ -46,6 +47,7 @@ class PriceVisitor extends Visitor {
 }
 
 class WeightVisitor extends Visitor {
+
   public WeightVisitor() {
     super("weight");
   }
@@ -76,6 +78,7 @@ class WeightVisitor extends Visitor {
 }
 
 public class TrashVisitor {
+
   public static void main(String[] args) {
     List<Trash> bin = new ArrayList<>();
     ParseTrash.fillBin("trash", bin);

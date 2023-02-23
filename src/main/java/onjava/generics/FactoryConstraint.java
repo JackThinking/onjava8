@@ -4,13 +4,14 @@ package onjava.generics;
 // (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-import onjava.Suppliers;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
+import onjava.Suppliers;
 
 class IntegerFactory implements Supplier<Integer> {
+
   private int i = 0;
 
   @Override
@@ -20,6 +21,7 @@ class IntegerFactory implements Supplier<Integer> {
 }
 
 class Widget {
+
   private int id;
 
   Widget(int n) {
@@ -32,6 +34,7 @@ class Widget {
   }
 
   public static class Factory implements Supplier<Widget> {
+
     private int i = 0;
 
     @Override
@@ -42,6 +45,7 @@ class Widget {
 }
 
 class Fudge {
+
   private static int count = 1;
   private int n = count++;
 
@@ -52,6 +56,7 @@ class Fudge {
 }
 
 class Foo2<T> {
+
   private List<T> x = new ArrayList<>();
 
   Foo2(Supplier<T> factory) {
@@ -65,6 +70,7 @@ class Foo2<T> {
 }
 
 public class FactoryConstraint {
+
   public static void main(String[] args) {
     System.out.println(new Foo2<>(new IntegerFactory()));
     System.out.println(new Foo2<>(new Widget.Factory()));

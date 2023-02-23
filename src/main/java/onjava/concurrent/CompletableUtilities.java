@@ -1,8 +1,10 @@
 package onjava.concurrent;
 
-import java.util.concurrent.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 public class CompletableUtilities {
+
   // Get and show value stored in a CF:
   public static void showr(CompletableFuture<?> c) {
     try {
@@ -11,6 +13,7 @@ public class CompletableUtilities {
       throw new RuntimeException(e);
     }
   }
+
   // For CF operations that have no value:
   public static void voidr(CompletableFuture<Void> c) {
     try {

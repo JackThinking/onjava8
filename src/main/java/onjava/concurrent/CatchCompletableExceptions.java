@@ -1,13 +1,16 @@
 package onjava.concurrent;
 
 public class CatchCompletableExceptions {
+
   static void handleException(int failcount) {
     // Call the Function only if there's an
     // exception, must produce same type as came in:
     CompletableExceptions.test("exceptionally", failcount)
         .exceptionally(
             (ex) -> { // Function exceptionally()局限性在于，该函数只能返回输入类型相同的值
-              if (ex == null) System.out.println("I don't get it yet");
+              if (ex == null) {
+                System.out.println("I don't get it yet");
+              }
               return new Breakable(ex.getMessage(), 0);
             })
         .thenAccept(str -> System.out.println("result: " + str));
@@ -16,8 +19,11 @@ public class CatchCompletableExceptions {
     CompletableExceptions.test("handle", failcount)
         .handle(
             (result, fail) -> { // BiFunction
-              if (fail != null) return "Failure recovery object";
-              else return result + " is good";
+              if (fail != null) {
+                return "Failure recovery object";
+              } else {
+                return result + " is good";
+              }
             })
         .thenAccept(str -> System.out.println("result: " + str));
 
@@ -25,8 +31,11 @@ public class CatchCompletableExceptions {
     CompletableExceptions.test("whenComplete", failcount)
         .whenComplete(
             (result, fail) -> { // BiConsumer
-              if (fail != null) System.out.println("It failed");
-              else System.out.println(result + " OK");
+              if (fail != null) {
+                System.out.println("It failed");
+              } else {
+                System.out.println(result + " OK");
+              }
             })
         .thenAccept(r -> System.out.println("result: " + r));
   }

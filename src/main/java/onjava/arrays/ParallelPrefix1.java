@@ -1,12 +1,12 @@
 package onjava.arrays;
 
-import onjava.Count;
-
-import java.util.Arrays;
-
 import static onjava.ArrayShow.show;
 
+import java.util.Arrays;
+import onjava.Count;
+
 public class ParallelPrefix1 {
+
   public static void main(String[] args) {
     int[] nums = new Count.Pint().array(10);
     show(nums);

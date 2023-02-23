@@ -5,13 +5,19 @@
 // {java patterns.recyclec.RecycleC}
 package onjava.patterns.recyclec;
 
-import onjava.patterns.trash.*;
-
 import java.util.ArrayList;
+import onjava.patterns.trash.Aluminum;
+import onjava.patterns.trash.Cardboard;
+import onjava.patterns.trash.Glass;
+import onjava.patterns.trash.Paper;
+import onjava.patterns.trash.ParseTrash;
+import onjava.patterns.trash.Trash;
+import onjava.patterns.trash.TrashValue;
 
 // A List that only admits the right type:
 // 限定类型的 arrayList，且附带类型的 class 元信息
 class TrashBin<T extends Trash> extends ArrayList<T> {
+
   final Class<T> binType;
 
   TrashBin(Class<T> binType) {
@@ -31,19 +37,30 @@ class TrashBin<T extends Trash> extends ArrayList<T> {
 }
 
 class TrashBinList<T extends Trash> extends ArrayList<TrashBin<? extends T>> { // [1]
+
   // 构造的时候自动分类，无须在成员变量中指定子类型，本质是 TrashBin 替代了具体的 List<Aluminum> 等实现
   @SuppressWarnings("unchecked")
   public TrashBinList(Class<? extends T>... types) {
-    for (Class<? extends T> type : types) add(new TrashBin<>(type));
+    for (Class<? extends T> type : types) {
+      add(new TrashBin<>(type));
+    }
   }
 
   public boolean sort(T t) {
-    for (TrashBin<? extends T> ts : this) if (ts.grab(t)) return true;
+    for (TrashBin<? extends T> ts : this) {
+      if (ts.grab(t)) {
+        return true;
+      }
+    }
     return false; // TrashBin not found for t
   }
 
   public void sortBin(TrashBin<T> bin) { // [2]
-    for (T trash : bin) if (!sort(trash)) throw new RuntimeException("Bin not found for " + trash);
+    for (T trash : bin) {
+      if (!sort(trash)) {
+        throw new RuntimeException("Bin not found for " + trash);
+      }
+    }
   }
 
   // 多态化，无序指定输出；for 循环取代了呆呆的过程式语句
@@ -56,6 +73,7 @@ class TrashBinList<T extends Trash> extends ArrayList<TrashBin<? extends T>> { /
 }
 
 public class RecycleC {
+
   public static void main(String[] args) {
     TrashBin<Trash> bin = new TrashBin<>(Trash.class);
     ParseTrash.fillBin("trash", bin);
@@ -69,7 +87,7 @@ public class RecycleC {
             Glass.class,
             // Add one item:
             Cardboard.class // [3]
-            );
+        );
     trashBins.sortBin(bin); // [4]
     trashBins.show();
     TrashValue.sum(bin, "Trash");

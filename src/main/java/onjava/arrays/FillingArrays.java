@@ -1,10 +1,11 @@
 package onjava.arrays;
 
-import java.util.Arrays;
-
 import static onjava.ArrayShow.show;
 
+import java.util.Arrays;
+
 public class FillingArrays {
+
   public static void main(String[] args) {
     int size = 6;
     boolean[] a1 = new boolean[size];

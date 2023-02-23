@@ -7,16 +7,16 @@
 // {java patterns.doubledispatch.DoubleDispatch}
 package onjava.patterns.doubledispatch;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import onjava.patterns.trash.ParseTrash;
 import onjava.patterns.trash.Trash;
 import onjava.patterns.trash.TrashValue;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 // region 垃圾桶和垃圾一样分离
 class AluminumBin extends TypedBin {
+
   public AluminumBin() {
     super("Aluminum");
   }
@@ -29,6 +29,7 @@ class AluminumBin extends TypedBin {
 }
 
 class PaperBin extends TypedBin {
+
   public PaperBin() {
     super("Paper");
   }
@@ -40,6 +41,7 @@ class PaperBin extends TypedBin {
 }
 
 class GlassBin extends TypedBin {
+
   public GlassBin() {
     super("Glass");
   }
@@ -51,6 +53,7 @@ class GlassBin extends TypedBin {
 }
 
 class CardboardBin extends TypedBin {
+
   public CardboardBin() {
     super("Cardboard");
   }
@@ -63,6 +66,7 @@ class CardboardBin extends TypedBin {
 // endregion
 
 class TrashBinSet {
+
   public final List<TypedBin> binSet =
       Arrays.asList(
           new AluminumBin(), new PaperBin(),
@@ -74,12 +78,15 @@ class TrashBinSet {
         aBin -> {
           TypedBinMember t = (TypedBinMember) aBin;
           // TypedBinMember 和 TypedBin 两个上层设计的分发
-          if (!t.addToBin(binSet)) throw new RuntimeException("sortIntoBins() couldn't add " + t);
+          if (!t.addToBin(binSet)) {
+            throw new RuntimeException("sortIntoBins() couldn't add " + t);
+          }
         });
   }
 }
 
 public class DoubleDispatch {
+
   public static void main(String[] args) {
     List<Trash> bin = new ArrayList<>();
     ParseTrash.fillBin("doubledispatch", bin);

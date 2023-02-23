@@ -2,9 +2,11 @@ package onjava.functional; // functional/Curry3Args.java
 // (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-import java.util.function.*;
+
+import java.util.function.Function;
 
 public class Curry3Args {
+
   public static void main(String[] args) {
     Function<String, Function<String, Function<String, String>>> sum = a -> b -> c -> a + b + c;
     Function<String, Function<String, String>> hi = sum.apply("Hi ");

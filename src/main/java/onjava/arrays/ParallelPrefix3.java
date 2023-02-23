@@ -1,8 +1,9 @@
 package onjava.arrays;
 
-import java.util.*;
+import java.util.Arrays;
 
 public class ParallelPrefix3 {
+
   static final int SIZE = 10_000_000;
 
   public static void main(String[] args) {

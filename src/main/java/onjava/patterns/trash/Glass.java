@@ -5,12 +5,19 @@
 package onjava.patterns.trash;
 
 public class Glass extends Trash {
-  public Glass(double wt) { super(wt); }
-  @Override public double price() {
+
+  public Glass(double wt) {
+    super(wt);
+  }
+
+  @Override
+  public double price() {
     return Price.GLASS;
   }
+
   // Ignore for now; to be used later:
-  @Override public void accept(Visitor v) {
+  @Override
+  public void accept(Visitor v) {
     v.visit(this);
   }
 }

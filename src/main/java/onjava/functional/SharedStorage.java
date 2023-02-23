@@ -1,8 +1,9 @@
 package onjava.functional;
 
-import java.util.function.*;
+import java.util.function.IntSupplier;
 
 public class SharedStorage {
+
   public static void main(String[] args) {
     Closure1 c1 = new Closure1();
     IntSupplier f1 = c1.makeFun(0);

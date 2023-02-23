@@ -8,12 +8,16 @@ package onjava.patterns.trash;
 import java.util.List;
 
 public class FillableList<T extends Trash>
-implements Fillable<T> {
+    implements Fillable<T> {
+
   private List<T> list;
+
   public FillableList(List<T> list) {
     this.list = list;
   }
-  @Override public void addTrash(T t) {
+
+  @Override
+  public void addTrash(T t) {
     list.add(t);
   }
 }

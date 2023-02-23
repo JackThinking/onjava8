@@ -1,11 +1,12 @@
 package onjava.concurrent;
 
-import java.util.concurrent.CompletableFuture;
-
 import static onjava.concurrent.CompletableUtilities.showr;
 import static onjava.concurrent.CompletableUtilities.voidr;
 
+import java.util.concurrent.CompletableFuture;
+
 public class DualCompletableOperations {
+
   static CompletableFuture<Workable> cfA, cfB;
 
   static void init() {

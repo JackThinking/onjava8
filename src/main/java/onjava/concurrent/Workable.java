@@ -3,17 +3,13 @@ package onjava.concurrent;
 import java.util.concurrent.CompletableFuture;
 
 public class Workable {
-  String id;
+
   final double duration;
+  String id;
 
   public Workable(String id, double duration) {
     this.id = id;
     this.duration = duration;
-  }
-
-  @Override
-  public String toString() {
-    return "Workable[" + id + "]";
   }
 
   public static Workable work(Workable tt) {
@@ -26,5 +22,10 @@ public class Workable {
   public static CompletableFuture<Workable> make(String id, double duration) {
     return CompletableFuture.completedFuture(new Workable(id, duration))
         .thenApplyAsync(Workable::work);
+  }
+
+  @Override
+  public String toString() {
+    return "Workable[" + id + "]";
   }
 }

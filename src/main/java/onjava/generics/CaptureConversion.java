@@ -6,6 +6,7 @@ package onjava.generics;
 // Visit http://OnJava8.com for more book information.
 
 public class CaptureConversion {
+
   static <T> void f1(Holder<T> holder) {
     T t = holder.get();
     System.out.println(t.getClass().getSimpleName());

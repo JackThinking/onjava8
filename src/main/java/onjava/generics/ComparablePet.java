@@ -6,6 +6,7 @@ package onjava.generics;
 // Visit http://OnJava8.com for more book information.
 
 public class ComparablePet implements Comparable<ComparablePet> {
+
   @Override
   public int compareTo(ComparablePet arg) {
     return 0;

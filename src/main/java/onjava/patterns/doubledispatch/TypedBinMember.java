@@ -10,6 +10,7 @@ package onjava.patterns.doubledispatch;
 import java.util.List;
 
 public interface TypedBinMember {
+
   // 分类函数，列表中是否需要处理
   boolean addToBin(List<TypedBin> bins);
 }

@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class QuittingCompletable {
+
   public static void main(String[] args) {
     List<QuittableTask> tasks =
         IntStream.range(1, QuittingTasks.COUNT)

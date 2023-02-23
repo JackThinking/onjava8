@@ -1,6 +1,7 @@
 package onjava.arrays;
 
 public class ArrayOfGenericType<T> {
+
   T[] array; // OK
 
   @SuppressWarnings("unchecked")

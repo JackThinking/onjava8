@@ -5,19 +5,20 @@ package onjava.generics;
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 
-class Building {}
+class Building {
 
-class House extends Building {}
+}
+
+class House extends Building {
+
+}
 
 public class ClassTypeCapture<T> {
+
   Class<T> kind;
 
   public ClassTypeCapture(Class<T> kind) {
     this.kind = kind;
-  }
-
-  public boolean f(Object arg) {
-    return kind.isInstance(arg);
   }
 
   public static void main(String[] args) {
@@ -27,6 +28,10 @@ public class ClassTypeCapture<T> {
     ClassTypeCapture<House> ctt2 = new ClassTypeCapture<>(House.class);
     System.out.println(ctt2.f(new Building()));
     System.out.println(ctt2.f(new House()));
+  }
+
+  public boolean f(Object arg) {
+    return kind.isInstance(arg);
   }
 }
 /* Output:

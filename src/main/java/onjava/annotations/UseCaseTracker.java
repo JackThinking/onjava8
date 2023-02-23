@@ -1,10 +1,12 @@
 package onjava.annotations;
 
-import java.util.*;
-import java.util.stream.*;
-import java.lang.reflect.*;
+import java.lang.reflect.Method;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class UseCaseTracker {
+
   public static void trackUseCases(List<Integer> useCases, Class<?> cl) {
     for (Method m : cl.getDeclaredMethods()) {
       UseCase uc = m.getAnnotation(UseCase.class);

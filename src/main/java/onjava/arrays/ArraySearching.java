@@ -1,12 +1,12 @@
 package onjava.arrays;
 
-import onjava.Rand;
-
-import java.util.Arrays;
-
 import static onjava.ArrayShow.show;
 
+import java.util.Arrays;
+import onjava.Rand;
+
 public class ArraySearching {
+
   public static void main(String[] args) {
     Rand.Pint rand = new Rand.Pint();
     int[] a = new Rand.Pint().array(25);

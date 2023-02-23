@@ -4,17 +4,31 @@ package onjava.generics;
 // (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-import java.util.*;
 
-class Frob {}
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-class Fnorkle {}
+class Frob {
 
-class Quark<Q> {}
+}
 
-class Particle<POSITION, MOMENTUM> {}
+class Fnorkle {
+
+}
+
+class Quark<Q> {
+
+}
+
+class Particle<POSITION, MOMENTUM> {
+
+}
 
 public class LostInformation {
+
   public static void main(String[] args) {
     List<Frob> list = new ArrayList<>();
     Map<Frob, Fnorkle> map = new HashMap<>();

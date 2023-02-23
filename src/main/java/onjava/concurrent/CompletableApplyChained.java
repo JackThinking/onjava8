@@ -1,10 +1,10 @@
 package onjava.concurrent;
 
+import java.util.concurrent.CompletableFuture;
 import onjava.Timer;
 
-import java.util.concurrent.CompletableFuture;
-
 public class CompletableApplyChained {
+
   public static void main(String[] args) {
     Timer timer = new Timer();
     CompletableFuture<Machina> cf =

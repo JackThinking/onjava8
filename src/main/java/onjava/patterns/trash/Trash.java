@@ -6,6 +6,7 @@
 package onjava.patterns.trash;
 
 public abstract class Trash {
+
   public final double weight;
 
   public Trash(double weight) {
@@ -20,6 +21,7 @@ public abstract class Trash {
         "%s weight: %.2f * price: %.2f = %.2f",
         getClass().getSimpleName(), weight, price(), weight * price());
   }
+
   // Ignore for now; to be used later:
   public abstract void accept(Visitor v);
 }

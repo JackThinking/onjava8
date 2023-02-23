@@ -7,6 +7,7 @@ package onjava.generics;
 // Exploring the meaning of wildcards
 
 public class Wildcards {
+
   // Raw argument:
   static void rawArgs(Holder holder, Object arg) {
     // - holder.set(arg);
@@ -24,6 +25,7 @@ public class Wildcards {
     // OK, but type information is lost:
     Object obj = holder.get();
   }
+
   // Like rawArgs(), but errors instead of warnings:
   static void unboundedArg(Holder<?> holder, Object arg) {
     // - holder.set(arg);

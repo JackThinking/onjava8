@@ -1,10 +1,10 @@
 package onjava.arrays;
 
+import java.util.Arrays;
 import onjava.Rand;
 
-import java.util.Arrays;
-
 public class ParallelSetAll {
+
   static final int SIZE = 10_000_000;
 
   static void intArray() {

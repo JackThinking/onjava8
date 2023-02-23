@@ -3,13 +3,6 @@ package onjava.concurrent;
 import java.util.concurrent.CompletableFuture;
 
 public class Batter {
-  static class Eggs {}
-
-  static class Milk {}
-
-  static class Sugar {}
-
-  static class Flour {}
 
   static <T> T prepare(T ingredient) {
     new Nap(0.1);
@@ -28,5 +21,21 @@ public class Batter {
     CompletableFuture.allOf(eggs, milk, sugar, flour).join();
     new Nap(0.1); // Mixing time
     return CompletableFuture.completedFuture(new Batter());
+  }
+
+  static class Eggs {
+
+  }
+
+  static class Milk {
+
+  }
+
+  static class Sugar {
+
+  }
+
+  static class Flour {
+
   }
 }

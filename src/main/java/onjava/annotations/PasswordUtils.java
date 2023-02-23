@@ -3,6 +3,7 @@ package onjava.annotations;
 import java.util.List;
 
 public class PasswordUtils {
+
   @UseCase(id = 47, description = "Passwords must contain at least one numeric")
   public boolean validatePassword(String passwd) {
     return (passwd.matches("\\w*\\d\\w*"));

@@ -1,22 +1,9 @@
 package onjava.concurrent;
 
 public class Machina {
-  public enum State {
-    START,
-    ONE,
-    TWO,
-    THREE,
-    END;
 
-    State step() {
-      if (equals(END)) return END;
-      return values()[ordinal() + 1];
-    }
-  }
-
-  private State state = State.START;
   private final int id;
-
+  private State state = State.START;
   public Machina(int id) {
     this.id = id;
   }
@@ -33,5 +20,20 @@ public class Machina {
   @Override
   public String toString() {
     return "Machina" + id + ": " + (state.equals(State.END) ? "complete" : state);
+  }
+
+  public enum State {
+    START,
+    ONE,
+    TWO,
+    THREE,
+    END;
+
+    State step() {
+      if (equals(END)) {
+        return END;
+      }
+      return values()[ordinal() + 1];
+    }
   }
 }

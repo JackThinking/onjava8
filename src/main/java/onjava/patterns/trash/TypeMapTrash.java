@@ -12,6 +12,7 @@ import onjava.patterns.TypeMap;
 
 // Adapter class for ParseTrash.fillBin():
 class TypeMapAdapter implements Fillable {
+
   private TypeMap<Trash> map;
 
   TypeMapAdapter(TypeMap<Trash> map) {
@@ -25,6 +26,7 @@ class TypeMapAdapter implements Fillable {
 }
 
 public class TypeMapTrash {
+
   @SuppressWarnings("unchecked")
   public static void main(String[] args) {
     TypeMap<Trash> bin = new TypeMap<>();

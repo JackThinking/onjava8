@@ -1,14 +1,15 @@
 package onjava;
 
+import static onjava.ArrayShow.show;
+
 import java.util.Arrays;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
-import static onjava.ArrayShow.show;
-
 public class TestCount {
+
   static final int SZ = 5;
 
   public static void main(String[] args) {

@@ -8,6 +8,7 @@ package onjava.patterns.trash;
 import java.util.List;
 
 public class TrashValue {
+
   private static double total;
 
   public static void sum(List<? extends Trash> bin, String type) {

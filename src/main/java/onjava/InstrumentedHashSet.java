@@ -8,10 +8,17 @@ public class InstrumentedHashSet<E> extends HashSet<E> {
 
   private int addCount = 0;
 
-  public InstrumentedHashSet() {}
+  public InstrumentedHashSet() {
+  }
 
   public InstrumentedHashSet(int initCap, float loadFactor) {
     super(initCap, loadFactor);
+  }
+
+  public static void main(String[] args) {
+    InstrumentedHashSet<String> set = new InstrumentedHashSet<>();
+    set.addAll(Arrays.asList("1", "2", "3"));
+    System.out.println(set.getAddCount());
   }
 
   @Override
@@ -28,11 +35,5 @@ public class InstrumentedHashSet<E> extends HashSet<E> {
 
   public int getAddCount() {
     return addCount;
-  }
-
-  public static void main(String[] args) {
-    InstrumentedHashSet<String> set = new InstrumentedHashSet<>();
-    set.addAll(Arrays.asList("1", "2", "3"));
-    System.out.println(set.getAddCount());
   }
 }

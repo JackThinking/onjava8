@@ -6,6 +6,7 @@ package onjava.generics;
 // Visit http://OnJava8.com for more book information.
 
 public class BasicHolder<T> {
+
   T element;
 
   void set(T arg) {

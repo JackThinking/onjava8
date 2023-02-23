@@ -1,10 +1,9 @@
 package onjava.concurrent;
 
-import java.util.stream.*;
-import java.util.concurrent.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.stream.Stream;
 
 public class ThrowsChecked {
-  class Checked extends Exception {}
 
   static ThrowsChecked nochecked(ThrowsChecked tc) {
     return tc;
@@ -15,7 +14,7 @@ public class ThrowsChecked {
   }
 
   static void testStream() {
-      // 你必须写出 lambda 表达式 (或者编写一个不会抛出异常的包装器方法)。
+    // 你必须写出 lambda 表达式 (或者编写一个不会抛出异常的包装器方法)。
     Stream.of(new ThrowsChecked())
         .map(ThrowsChecked::nochecked)
         // .map(ThrowsChecked::withchecked);        // [1]
@@ -41,5 +40,9 @@ public class ThrowsChecked {
                 throw new RuntimeException(e);
               }
             });
+  }
+
+  class Checked extends Exception {
+
   }
 }

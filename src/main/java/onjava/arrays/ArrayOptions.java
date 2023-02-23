@@ -1,9 +1,9 @@
 package onjava.arrays;
 
-import java.util.*;
-import static onjava.ArrayShow.*;
+import static onjava.ArrayShow.show;
 
 public class ArrayOptions {
+
   public static void main(String[] args) {
     // Arrays of objects:
     BerylliumSphere[] a; // Uninitialized local
@@ -13,17 +13,20 @@ public class ArrayOptions {
     // automatically initialized to null:
     show("b", b);
     BerylliumSphere[] c = new BerylliumSphere[4];
-    for (int i = 0; i < c.length; i++)
+    for (int i = 0; i < c.length; i++) {
       if (c[i] == null) // Can test for null reference
-      c[i] = new BerylliumSphere();
+      {
+        c[i] = new BerylliumSphere();
+      }
+    }
 
     // Aggregate initialization:
     BerylliumSphere[] d = {new BerylliumSphere(), new BerylliumSphere(), new BerylliumSphere()};
 
     // Dynamic aggregate initialization:
     a =
-        new BerylliumSphere[] {
-          new BerylliumSphere(), new BerylliumSphere(),
+        new BerylliumSphere[]{
+            new BerylliumSphere(), new BerylliumSphere(),
         };
     // (Trailing comma is optional)
 
@@ -42,7 +45,9 @@ public class ArrayOptions {
     // automatically initialized to zero:
     show("f", f);
     int[] g = new int[4];
-    for (int i = 0; i < g.length; i++) g[i] = i * i;
+    for (int i = 0; i < g.length; i++) {
+      g[i] = i * i;
+    }
     int[] h = {11, 47, 93};
 
     //  Compile error: variable e not initialized:
@@ -52,7 +57,7 @@ public class ArrayOptions {
     System.out.println("h.length = " + h.length);
     e = h;
     System.out.println("e.length = " + e.length);
-    e = new int[] {1, 2};
+    e = new int[]{1, 2};
     System.out.println("e.length = " + e.length);
   }
 }

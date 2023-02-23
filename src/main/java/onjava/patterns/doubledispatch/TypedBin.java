@@ -5,16 +5,16 @@
 // A List that can grab the right type.
 package onjava.patterns.doubledispatch;
 
-import onjava.patterns.trash.Trash;
-
 import java.util.ArrayList;
 import java.util.List;
+import onjava.patterns.trash.Trash;
 
 // 将垃圾桶进行抽象
 public class TypedBin {
+
+  public final String type;
   // 必须是私有的
   private List<Trash> typedBin = new ArrayList<>();
-  public final String type;
 
   public TypedBin(String type) {
     this.type = type;
