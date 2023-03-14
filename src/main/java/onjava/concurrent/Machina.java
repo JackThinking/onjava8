@@ -4,6 +4,7 @@ public class Machina {
 
   private final int id;
   private State state = State.START;
+
   public Machina(int id) {
     this.id = id;
   }

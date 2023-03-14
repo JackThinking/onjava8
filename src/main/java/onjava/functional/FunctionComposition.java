@@ -10,7 +10,9 @@ public class FunctionComposition {
   public static void main(String[] args) {
     System.out.println(f4.apply("GO AFTER ALL AMBULANCES"));
     System.out.println(f5.apply("GO AFTER ALL AMBULANCES"));
-  }  static Function<String, String>
+  }
+
+  static Function<String, String>
       f1 =
       s -> {
         System.out.println(s);
